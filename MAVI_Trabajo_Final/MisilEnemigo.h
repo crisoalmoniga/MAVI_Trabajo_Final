@@ -5,7 +5,7 @@ class MisilEnemigo
 {
 public:
     // Constructor de la clase
-    MisilEnemigo(sf::Texture& textureMisilEnemigo, sf::Vector2f posiciones[]);
+    MisilEnemigo(sf::Texture& textureMisilEnemigo, const std::vector<sf::Vector2f>& posiciones);
 
     // Método para cambiar la posición
     void cambiarPosicion();
@@ -15,7 +15,6 @@ public:
 
 private:
     sf::Sprite sprite;
-    sf::Vector2f* posiciones;
+    std::vector<sf::Vector2f> posiciones;
     sf::Texture& textureMisilEnemigo;
 };
-

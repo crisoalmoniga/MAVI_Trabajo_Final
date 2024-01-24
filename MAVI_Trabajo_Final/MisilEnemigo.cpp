@@ -1,25 +1,25 @@
 #include "MisilEnemigo.h"
-#include <cstdlib>
+#include <random>
 
-// Constructor de la clase MisilEnemigo
-MisilEnemigo::MisilEnemigo(sf::Texture& textureMisilEnemigo, sf::Vector2f posiciones[])
-	: textureMisilEnemigo(textureMisilEnemigo), posiciones(posiciones) {
-	// Configurar la textura del MisilEnemigo
-	sprite.setTexture(textureMisilEnemigo);
-	// Establecer la posición inicial aleatoria entre las posiciones disponibles
-	sprite.setPosition(this->posiciones[rand() % 6]);
+MisilEnemigo::MisilEnemigo(sf::Texture& textureMisilEnemigo, const std::vector<sf::Vector2f>& posiciones)
+    : textureMisilEnemigo(textureMisilEnemigo), posiciones(posiciones) {
+    // Configurar la textura del MisilEnemigo
+    sprite.setTexture(textureMisilEnemigo);
+
+    // Asegurarse de que el vector de posiciones no esté vacío
+    if (!posiciones.empty()) {
+        // Establecer la posición inicial aleatoria entre las posiciones disponibles
+        sprite.setPosition(posiciones[std::rand() % posiciones.size()]);
+    }
 }
 
-// Método para cambiar la posición de manera aleatoria
 void MisilEnemigo::cambiarPosicion() {
-	// Cambiar a una nueva posición aleatoria
-	sprite.setPosition(posiciones[rand() % 6]);
+    // Cambiar a una nueva posición aleatoria
+    if (!posiciones.empty()) {
+        sprite.setPosition(posiciones[std::rand() % posiciones.size()]);
+    }
+}  // Añadida la llave de cierre para la función cambiarPosicion()
 
-	// Cambiar a una nueva textura aleatoria
-	sprite.setTexture((rand() % 2 == 0) ? textureMisilEnemigo);
-}
-
-// Método para obtener el sprite del enemigo/inocente
 sf::Sprite MisilEnemigo::getSprite() const {
-	return sprite;
+    return sprite;
 }

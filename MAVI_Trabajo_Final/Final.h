@@ -10,7 +10,7 @@ public:
     sf::Texture texturaPerdiste;
     sf::Sprite spritePerdiste;
     sf::Texture texturaGanaste;
-    sf::Sprite spriteGanaste
+    sf::Sprite spriteGanaste;
 
     sf::RenderWindow* ventana;
 

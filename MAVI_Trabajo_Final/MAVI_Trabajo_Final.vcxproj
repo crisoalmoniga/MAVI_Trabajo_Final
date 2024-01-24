@@ -132,9 +132,11 @@
   <ItemGroup>
     <ClCompile Include="Edificios.cpp" />
     <ClCompile Include="Final.cpp" />
+    <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Inicio.cpp" />
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Mira.cpp" />
     <ClCompile Include="Misil.cpp" />
     <ClCompile Include="MisilEnemigo.cpp" />
     <ClCompile Include="Puntaje.cpp" />
@@ -144,8 +146,11 @@
   <ItemGroup>
     <ClInclude Include="Edificios.h" />
     <ClInclude Include="Final.h" />
+    <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Inicio.h" />
     <ClInclude Include="Juego.h" />
+    <ClInclude Include="Main.h" />
+    <ClInclude Include="Mira.h" />
     <ClInclude Include="Misil.h" />
     <ClInclude Include="MisilEnemigo.h" />
     <ClInclude Include="Puntaje.h" />

@@ -1,0 +1,61 @@
+﻿  Juego.cpp
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(25,12): error C2248: 'Inicio::Inicio': no se puede obtener acceso al miembro private miembro declarado en la clase 'Inicio'
+  D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Inicio.h(6,5):
+  vea la declaración de 'Inicio::Inicio'
+  D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Inicio.h(4,7):
+  vea la declaración de 'Inicio'
+  
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(27,14): error C2248: 'Gameplay::Gameplay': no se puede obtener acceso al miembro private miembro declarado en la clase 'Gameplay'
+  D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Gameplay.h(6,5):
+  vea la declaración de 'Gameplay::Gameplay'
+  D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Gameplay.h(4,7):
+  vea la declaración de 'Gameplay'
+  
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(53,30): error C2665: 'MisilEnemigo::MisilEnemigo':ninguna función sobrecargada pudo convertir todos los tipos de argumento
+  D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MisilEnemigo.h(8,5):
+  puede ser 'MisilEnemigo::MisilEnemigo(sf::Texture &,const std::vector<sf::Vector2f,std::allocator<sf::Vector2f>> &)'
+  	D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(53,30):
+  	'MisilEnemigo::MisilEnemigo(sf::Texture &,const std::vector<sf::Vector2f,std::allocator<sf::Vector2f>> &)': el argumento 2 no puede convertirse de 'sf::Vector2f [6]' a 'const std::vector<sf::Vector2f,std::allocator<sf::Vector2f>> &'
+  		D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(53,52):
+  		Razón: no se puede realizar la conversión de 'sf::Vector2f [6]' a 'const std::vector<sf::Vector2f,std::allocator<sf::Vector2f>>'
+  		D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(53,52):
+  		'std::vector<sf::Vector2f,std::allocator<sf::Vector2f>>::vector':ninguna función sobrecargada pudo convertir todos los tipos de argumento
+  			E:\Instalados\Visual studio\VC\Tools\MSVC\14.38.33130\include\vector(654,5):
+  			puede ser 'std::vector<sf::Vector2f,std::allocator<sf::Vector2f>>::vector(std::initializer_list<_Ty>,const _Alloc &)'
+          with
+          [
+              _Ty=sf::Vector2f,
+              _Alloc=std::allocator<sf::Vector2f>
+          ]
+  				D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(53,52):
+  				'std::vector<sf::Vector2f,std::allocator<sf::Vector2f>>::vector(std::initializer_list<_Ty>,const _Alloc &)': el argumento 1 no puede convertirse de 'sf::Vector2f [6]' a 'std::initializer_list<_Ty>'
+          with
+          [
+              _Ty=sf::Vector2f,
+              _Alloc=std::allocator<sf::Vector2f>
+          ]
+          and
+          [
+              _Ty=sf::Vector2f
+          ]
+  					D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(53,52):
+  					La conversión requiere un segundo operador de conversión definido por el usuario o constructor
+  			E:\Instalados\Visual studio\VC\Tools\MSVC\14.38.33130\include\vector(627,5):
+  			o       'std::vector<sf::Vector2f,std::allocator<sf::Vector2f>>::vector(_Iter,_Iter,const _Alloc &)'
+          with
+          [
+              _Alloc=std::allocator<sf::Vector2f>
+          ]
+  			D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(53,52):
+  			al hacer coincidir la lista de argumentos '(sf::Vector2f [6])'
+  D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(53,30):
+  al hacer coincidir la lista de argumentos '(sf::Texture, sf::Vector2f [6])'
+  
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(112,31): error C2248: 'Inicio::spriteInicio': no se puede obtener acceso al miembro private miembro declarado en la clase 'Inicio'
+  D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Inicio.h(9,16):
+  vea la declaración de 'Inicio::spriteInicio'
+  D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Inicio.h(4,7):
+  vea la declaración de 'Inicio'
+  
+  MisilEnemigo.cpp
+  Generando código...
