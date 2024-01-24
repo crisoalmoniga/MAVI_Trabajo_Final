@@ -136,6 +136,7 @@
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Misil.cpp" />
+    <ClCompile Include="MisilEnemigo.cpp" />
     <ClCompile Include="Puntaje.cpp" />
     <ClCompile Include="Tiempo.cpp" />
     <ClCompile Include="Vidas.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Inicio.h" />
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Misil.h" />
+    <ClInclude Include="MisilEnemigo.h" />
     <ClInclude Include="Puntaje.h" />
     <ClInclude Include="Tiempo.h" />
     <ClInclude Include="Vidas.h" />
