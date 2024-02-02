@@ -17,7 +17,7 @@ Juego::~Juego() {
 
 void Juego::Go() {
     // Creacion de ventana principal del juego
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "La cupula de Hierro");
+    sf::RenderWindow App(sf::VideoMode(1280, 720), "La cupula de Hierro");
 
     // Carga de la pantalla de juego (gameplay.png)
     sf::Texture gameplayTexture;
@@ -29,17 +29,23 @@ void Juego::Go() {
     sf::Sprite gameplaySprite(gameplayTexture);
 
     // Bucle principal del juego
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            // Eventos de la ventana principal
-            if (event.type == sf::Event::Closed) {
-                window.close();
+    while (App.isOpen())
+    {
+        sf::Event evt;
+        while (App.pollEvent(evt)) {
+            /////Procesar eventos//////
+            switch (evt.type)
+            {
+                /////Si se cerro la ventana//////
+            case sf::Event::Closed:
+                App.close();
+                break;
             }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+                App.close();
         }
-
-        window.clear();
-        window.draw(gameplaySprite);
-        window.display();
+        App.clear();
+        App.draw(gameplaySprite);
+        App.display();
     }
 }
