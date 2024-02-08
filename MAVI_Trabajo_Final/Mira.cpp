@@ -3,7 +3,7 @@
 // Constructor
 Mira::Mira(sf::Texture& texture) {
     sprite.setTexture(texture);  // Establecer la textura de la mira
-    sprite.setScale(0.2f, 0.2f);  // Tamaño de la mira, setear a gusto
+    sprite.setScale(0.4f, 0.4f);  // Tamaño de la mira, setear a gusto
     sprite.setOrigin(sprite.getLocalBounds().width / 2, sprite.getLocalBounds().height / 2);  // Establecer el origen en el centro
 }
 
@@ -22,6 +22,6 @@ sf::Vector2f Mira::getPosition() const {
 }
 
 // Dibujar la mira en la ventana
-void Mira::draw(sf::RenderWindow& window) {
-    window.draw(sprite);
+void Mira::draw(sf::RenderWindow& App) {
+    App.draw(sprite);
 }
