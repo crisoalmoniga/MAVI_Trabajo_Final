@@ -1,4 +1,4 @@
 ﻿  Juego.cpp
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(57,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(57,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(63,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(63,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   MAVI_Trabajo_Final.vcxproj -> D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\x64\Debug\MAVI_Trabajo_Final.exe

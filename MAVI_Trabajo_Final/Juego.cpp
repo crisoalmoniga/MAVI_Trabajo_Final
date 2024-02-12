@@ -39,6 +39,12 @@ void Juego::Go() {
     }
     Mira mira(miraTexture);
 
+    sf::Font fuente;
+    if (!fuente.loadFromFile("GAME_glm.ttf")) {
+        std::cerr << "Error al cargar la fuente" << std::endl;
+        return;
+    }
+
     // Bucle principal del juego
     while (App.isOpen())
     {
@@ -59,10 +65,10 @@ void Juego::Go() {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) //Es evento unbuffered
                 App.close();
         }
-        App.setFramerateLimit(60);
         App.clear();
         App.draw(gameplaySprite);
         mira.draw(App);
         App.display();
     }
+    App.setFramerateLimit(60);
 }
