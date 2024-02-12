@@ -59,6 +59,7 @@ void Juego::Go() {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) //Es evento unbuffered
                 App.close();
         }
+        App.setFramerateLimit(60);
         App.clear();
         App.draw(gameplaySprite);
         mira.draw(App);
