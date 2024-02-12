@@ -1,4 +1,3 @@
-﻿  Juego.cpp
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(63,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(63,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+﻿  MisilEnemigo.cpp
+  LINK : no se encontró D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\x64\Debug\MAVI_Trabajo_Final.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   MAVI_Trabajo_Final.vcxproj -> D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\x64\Debug\MAVI_Trabajo_Final.exe
