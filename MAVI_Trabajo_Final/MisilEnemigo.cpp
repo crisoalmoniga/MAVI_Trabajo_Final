@@ -18,7 +18,7 @@ void MisilEnemigo::cambiarPosicion() {
     if (!posiciones.empty()) {
         sprite.setPosition(posiciones[std::rand() % posiciones.size()]);
     }
-}  // Añadida la llave de cierre para la función cambiarPosicion()
+}
 
 sf::Sprite MisilEnemigo::getSprite() const {
     return sprite;

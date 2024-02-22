@@ -21,8 +21,7 @@ public:
 	};
 
 	// Carga de texturas
-	sf::Texture enemigoTexture;
-	sf::Texture inocenteTexture;
+	sf::Texture textureMisilEnemigo;
 	sf::Texture miraTexture;
 
 

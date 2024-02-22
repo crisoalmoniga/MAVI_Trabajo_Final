@@ -33,11 +33,15 @@ void Juego::Go() {
 
     // Crear objeto Mira
     sf::Texture miraTexture;
-    if (!miraTexture.loadFromFile("mira.png")) {
+    if (!miraTexture.loadFromFile("mira.png") || !textureMisilEnemigo.loadFromFile("misilenemigo.png")) {
         std::cerr << "Error al cargar la textura de la mira (mira.png)" << std::endl;
         return;
     }
     Mira mira(miraTexture);
+
+    sf::Sprite sprite;
+    sprite.setScale(1.2f, 1.2f);
+
 
     sf::Font fuente;
     if (!fuente.loadFromFile("GAME_glm.ttf")) {
