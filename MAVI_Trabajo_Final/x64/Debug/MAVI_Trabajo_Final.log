@@ -1,7 +1,4 @@
 ﻿  Juego.cpp
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(67,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(67,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Main.cpp
-  MisilEnemigo.cpp
-  Generando código...
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(62,60): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(62,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   MAVI_Trabajo_Final.vcxproj -> D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\x64\Debug\MAVI_Trabajo_Final.exe

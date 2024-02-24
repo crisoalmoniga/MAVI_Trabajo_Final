@@ -1,25 +1,22 @@
 #include "MisilEnemigo.h"
-#include <random>
 
-MisilEnemigo::MisilEnemigo(sf::Texture& textureMisilEnemigo, const std::vector<sf::Vector2f>& posiciones)
-    : textureMisilEnemigo(textureMisilEnemigo), posiciones(posiciones) {
-    // Configurar la textura del MisilEnemigo
-    sprite.setTexture(textureMisilEnemigo);
-
-    // Asegurarse de que el vector de posiciones no esté vacío
-    if (!posiciones.empty()) {
-        // Establecer la posición inicial aleatoria entre las posiciones disponibles
-        sprite.setPosition(posiciones[std::rand() % posiciones.size()]);
-    }
+MisilEnemigo::MisilEnemigo(int _x, int _y) {
+	x = _x;
+	y = _y;
+	velocidadX = -4;
+	velocidadY = 4;
+	setearTextura();
+	sprite.scale(0.8, 0.8);
 }
 
-void MisilEnemigo::cambiarPosicion() {
-    // Cambiar a una nueva posición aleatoria
-    if (!posiciones.empty()) {
-        sprite.setPosition(posiciones[std::rand() % posiciones.size()]);
-    }
+void MisilEnemigo::setearTextura() {
+	if (!textura.loadFromFile("misilenemigo.png"))
+		printf("Falta textura misil");
+	sprite.setTexture(textura);
 }
 
-sf::Sprite MisilEnemigo::getSprite() const {
-    return sprite;
+void MisilEnemigo::movimiento() {
+	x += velocidadX;
+	y += velocidadY;
+	sprite.setPosition(x, y);
 }

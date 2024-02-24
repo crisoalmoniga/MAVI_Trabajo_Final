@@ -3,18 +3,18 @@
 
 class MisilEnemigo
 {
+
+	int velocidadX;
+	int velocidadY;
+	void setearTextura();
+	sf::Texture textura;
+
 public:
-    // Constructor de la clase
-    MisilEnemigo(sf::Texture& textureMisilEnemigo, const std::vector<sf::Vector2f>& posiciones);
+	MisilEnemigo(int _x, int _y);
 
-    // Método para cambiar la posición
-    void cambiarPosicion();
+	void movimiento();
+	sf::Sprite sprite;
+	int x;
+	int y;
 
-    // Método para obtener el sprite del misil enemigo
-    sf::Sprite getSprite() const;
-
-private:
-    sf::Sprite sprite;
-    std::vector<sf::Vector2f> posiciones;
-    sf::Texture& textureMisilEnemigo;
 };
