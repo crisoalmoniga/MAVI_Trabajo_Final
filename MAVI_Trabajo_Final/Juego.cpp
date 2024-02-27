@@ -36,6 +36,21 @@ void Juego::Go() {
     }
     sf::Sprite gameplaySprite(gameplayTexture);  // Crear un sprite con la textura cargada
 
+    // Crear fuente de texto para mostrar los puntos
+    sf::Font font;
+    if (!font.loadFromFile("military_font_7.ttf")) {
+        std::cerr << "Error al cargar la fuente de texto" << std::endl;
+        return;
+    }
+
+    // Crear objeto de texto para mostrar los puntos
+    sf::Text puntosText;
+    puntosText.setFont(font);
+    puntosText.setCharacterSize(24);
+    puntosText.setFillColor(sf::Color::White);
+    puntosText.setPosition(10, 10); // Posición en la esquina superior izquierda
+
+
     // Crear objeto Mira y cargar su textura (mira.png)
     sf::Texture miraTexture;
     if (!miraTexture.loadFromFile("mira.png")) {  // Cargar la textura de la mira desde el archivo mira.png
@@ -68,12 +83,11 @@ void Juego::Go() {
                 if (misil_1.sprite.getGlobalBounds().contains(sf::Vector2f(evt.mouseButton.x, evt.mouseButton.y))) {
                     puntos += 10;
                     // Generar coordenadas aleatorias fuera del rango de la ventana
-                    std::random_device rd;
-                    std::mt19937 gen(rd());
-                    std::uniform_int_distribution<int> distribucionX(App.getSize().x, App.getSize().x + 200);
-                    std::uniform_int_distribution<int> distribucionY(App.getSize().y, App.getSize().y + 200);
-                    int nuevaX = distribucionX(gen);
-                    int nuevaY = distribucionY(gen);
+                    // Obtener la nueva posición X
+                    int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
+                    // Obtener la nueva posición Y
+                    int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
+                    // Llamar al método cambiarPosicion() para actualizar la posición del misil
                     misil_1.cambiarPosicion(nuevaX, nuevaY);
                 }
             }
@@ -82,12 +96,11 @@ void Juego::Go() {
                 if (misil_2.sprite.getGlobalBounds().contains(sf::Vector2f(evt.mouseButton.x, evt.mouseButton.y))) {
                     puntos += 10;
                     // Generar coordenadas aleatorias fuera del rango de la ventana
-                    std::random_device rd;
-                    std::mt19937 gen(rd());
-                    std::uniform_int_distribution<int> distribucionX(App.getSize().x, App.getSize().x + 200);
-                    std::uniform_int_distribution<int> distribucionY(App.getSize().y, App.getSize().y + 200);
-                    int nuevaX = distribucionX(gen);
-                    int nuevaY = distribucionY(gen);
+                    // Obtener la nueva posición X
+                    int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
+                    // Obtener la nueva posición Y
+                    int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
+                    // Llamar al método cambiarPosicion() para actualizar la posición del misil
                     misil_2.cambiarPosicion(nuevaX, nuevaY);
                 }
 
@@ -97,12 +110,11 @@ void Juego::Go() {
                 if (misil_3.sprite.getGlobalBounds().contains(sf::Vector2f(evt.mouseButton.x, evt.mouseButton.y))) {
                     puntos += 10;
                     // Generar coordenadas aleatorias fuera del rango de la ventana
-                    std::random_device rd;
-                    std::mt19937 gen(rd());
-                    std::uniform_int_distribution<int> distribucionX(App.getSize().x, App.getSize().x + 200);
-                    std::uniform_int_distribution<int> distribucionY(App.getSize().y, App.getSize().y + 200);
-                    int nuevaX = distribucionX(gen);
-                    int nuevaY = distribucionY(gen);
+                    // Obtener la nueva posición X
+                    int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
+                    // Obtener la nueva posición Y
+                    int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
+                    // Llamar al método cambiarPosicion() para actualizar la posición del misil
                     misil_3.cambiarPosicion(nuevaX, nuevaY);
                 }
  
@@ -137,6 +149,9 @@ void Juego::Go() {
             misil_3.y = -300;
         }
 
+        // Actualizar el texto de los puntos
+        puntosText.setString("Puntos: " + std::to_string(puntos));
+
         // Limpiar la ventana
         App.clear();
 
@@ -146,6 +161,7 @@ void Juego::Go() {
         App.draw(misil_2.sprite);
         App.draw(misil_3.sprite);
         mira.draw(App);
+        App.draw(puntosText);
 
         // Mostrar la ventana
         App.display();
