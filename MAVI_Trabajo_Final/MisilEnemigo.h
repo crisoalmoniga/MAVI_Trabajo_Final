@@ -1,20 +1,22 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream> // Agregado para el uso de std::cerr
 
-class MisilEnemigo
-{
+class MisilEnemigo {
+private:
+    int velocidadX;
+    int velocidadY;
+    sf::Texture textura;
 
-	int velocidadX;
-	int velocidadY;
-	void setearTextura();
-	sf::Texture textura;
+    void setearTextura();
 
 public:
-	MisilEnemigo(int _x, int _y);
+    MisilEnemigo(int _x, int _y);
 
-	void movimiento();
-	sf::Sprite sprite;
-	int x;
-	int y;
+    void movimiento();
+    void cambiarPosicion(int newX, int newY);
 
+    sf::Sprite sprite;
+    int x;
+    int y;
 };
