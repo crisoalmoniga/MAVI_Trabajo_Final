@@ -21,7 +21,7 @@ void Juego::Go() {
     App.setMouseCursorVisible(false);  // Ocultar el cursor del ratón en la ventana
 
     // Crear tres objetos MisilEnemigo en posiciones específicas
-    MisilEnemigo misil_1(1200, -300);
+    MisilEnemigo misil_1(1300, -300);
     MisilEnemigo misil_2(1300, -200);
     MisilEnemigo misil_3(1400, -500);
 
@@ -46,8 +46,8 @@ void Juego::Go() {
     // Crear objeto de texto para mostrar los puntos
     sf::Text puntosText;
     puntosText.setFont(font);
-    puntosText.setCharacterSize(24);
-    puntosText.setFillColor(sf::Color::White);
+    puntosText.setCharacterSize(29);
+    puntosText.setFillColor(sf::Color::Green);
     puntosText.setPosition(10, 10); // Posición en la esquina superior izquierda
 
 
@@ -90,6 +90,7 @@ void Juego::Go() {
                     // Llamar al método cambiarPosicion() para actualizar la posición del misil
                     misil_1.cambiarPosicion(nuevaX, nuevaY);
                 }
+
             }
             if (evt.mouseButton.button == sf::Mouse::Left) {
                 // Verificar si se hizo clic izquierdo sobre misil_1
