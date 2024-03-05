@@ -8,7 +8,7 @@ class Juego
 public:
     int posicion = 500;
     int puntos = 0;
-    int vidas = 9;
+    int vitalidad = 100;
     int misilesenemigosDerribados = 0;
     sf::Vector2f posiciones[6];
     sf::Texture textureMisilEnemigo;
