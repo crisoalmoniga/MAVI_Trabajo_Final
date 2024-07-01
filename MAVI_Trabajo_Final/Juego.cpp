@@ -20,8 +20,9 @@ void Juego::Go() {
     sf::RenderWindow App(sf::VideoMode(1280, 720), "La cupula de Hierro");
     App.setMouseCursorVisible(false);  // Ocultar el cursor del ratón en la ventana
 
-    // Restablecer la variable para el próximo ciclo
-    bool vidaRestada = false;
+    // Inicializar variables de juego
+    int puntos = 0;
+    int vitalidad = 100;
 
     // Crear tres objetos MisilEnemigo en posiciones específicas
     MisilEnemigo misil_1(1300, -300);
@@ -38,6 +39,50 @@ void Juego::Go() {
         return;
     }
     sf::Sprite gameplaySprite(gameplayTexture);  // Crear un sprite con la textura cargada
+
+    // Cargar la pantalla de menú (menu.png)
+    sf::Texture menuTexture;
+    if (!menuTexture.loadFromFile("menu.png")) {  // Cargar la textura desde el archivo menu.png
+        std::cerr << "Error al cargar la pantalla de menú (menu.png)" << std::endl;
+        return;
+    }
+    sf::Sprite menuSprite(menuTexture);  // Crear un sprite con la textura cargada
+
+    // Cargar la pantalla de "Perdiste" (perdiste.png)
+    sf::Texture perdisteTexture;
+    if (!perdisteTexture.loadFromFile("perdiste.png")) {  // Cargar la textura desde el archivo perdiste.png
+        std::cerr << "Error al cargar la pantalla de 'Perdiste' (perdiste.png)" << std::endl;
+        return;
+    }
+    sf::Sprite perdisteSprite(perdisteTexture);  // Crear un sprite con la textura cargada
+
+    // Cargar la pantalla de "Ganaste" (ganaste.png)
+    sf::Texture ganasteTexture;
+    if (!ganasteTexture.loadFromFile("ganaste.png")) {  // Cargar la textura desde el archivo ganaste.png
+        std::cerr << "Error al cargar la pantalla de 'Ganaste' (ganaste.png)" << std::endl;
+        return;
+    }
+    sf::Sprite ganasteSprite(ganasteTexture);  // Crear un sprite con la textura cargada
+
+    // Ajustar los sprites a la proporción de la pantalla
+    sf::Vector2u windowSize = App.getSize();
+    sf::Vector2u textureSize = menuTexture.getSize();
+
+    float scaleX = static_cast<float>(windowSize.x) / textureSize.x;
+    float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
+
+    menuSprite.setScale(scaleX, scaleY);
+    perdisteSprite.setScale(scaleX, scaleY);
+    ganasteSprite.setScale(scaleX, scaleY);
+
+    // Cargar la textura de la explosión
+    sf::Texture explosionTexture;
+    if (!explosionTexture.loadFromFile("explosion.png")) {
+        std::cerr << "Error al cargar la textura de la explosión (explosion.png)" << std::endl;
+        return;
+    }
+    sf::Sprite explosionSprite(explosionTexture);  // Crear un sprite con la textura cargada
+    explosionSprite.setScale(0.5f, 0.5f);  // Ajustar el tamaño del sprite de la explosión
 
     // Crear fuentes de texto para mostrar los puntos y Vidas
     sf::Font font;
@@ -76,6 +121,12 @@ void Juego::Go() {
 
     // Variables de control del juego
     bool juegoTerminado = false;
+    bool explosionVisible = false;  // Para controlar la visibilidad de la explosión
+    sf::Clock explosionClock;  // Reloj para controlar la duración de la explosión
+
+    // Estado del juego
+    enum EstadoJuego { MENU, JUGANDO, PERDISTE, GANASTE };
+    EstadoJuego estado = MENU;
 
     // Bucle principal del juego
     while (App.isOpen()) {  // Mientras la ventana esté abierta
@@ -89,50 +140,112 @@ void Juego::Go() {
                 break;
                 // Si se movió el mouse
             case sf::Event::MouseMoved:
-                mira.setPosition(evt.mouseMove.x, evt.mouseMove.y);  // Actualizar la posición de la mira con la posición del ratón
+                if (estado == JUGANDO) {
+                    mira.setPosition(evt.mouseMove.x, evt.mouseMove.y);  // Actualizar la posición de la mira con la posición del ratón
+                }
                 break;
-            }
-
-            // Restar una vida si un misil alcanza la posición 500 y no se ha restado ya una vida en este ciclo
-            if ((misil_1.y >= 500 || misil_2.y >= 500 || misil_3.y >= 500) && !vidaRestada) {
-                // Restar una vida
-                vitalidad--;
-                // Marcar que se ha restado una vida en este ciclo
-                vidaRestada = true;
+                // Si se hizo clic con el mouse
+            case sf::Event::MouseButtonPressed:
+                if (estado == MENU) {
+                    estado = JUGANDO;
+                }
+                else if (estado == JUGANDO && evt.mouseButton.button == sf::Mouse::Left) {
+                    sf::Vector2f mousePos(evt.mouseButton.x, evt.mouseButton.y);
+                    if (misil_1.sprite.getGlobalBounds().contains(mousePos)) {
+                        puntos += 10;
+                        explosionSprite.setPosition(misil_1.sprite.getPosition());
+                        explosionVisible = true;
+                        explosionClock.restart();
+                        int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
+                        int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
+                        misil_1.cambiarPosicion(nuevaX, nuevaY);
+                    }
+                    else if (misil_2.sprite.getGlobalBounds().contains(mousePos)) {
+                        puntos += 10;
+                        explosionSprite.setPosition(misil_2.sprite.getPosition());
+                        explosionVisible = true;
+                        explosionClock.restart();
+                        int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
+                        int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
+                        misil_2.cambiarPosicion(nuevaX, nuevaY);
+                    }
+                    else if (misil_3.sprite.getGlobalBounds().contains(mousePos)) {
+                        puntos += 10;
+                        explosionSprite.setPosition(misil_3.sprite.getPosition());
+                        explosionVisible = true;
+                        explosionClock.restart();
+                        int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
+                        int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
+                        misil_3.cambiarPosicion(nuevaX, nuevaY);
+                    }
+                }
+                break;
+                // Si se presiona una tecla
+            case sf::Event::KeyPressed:
+                if (estado == PERDISTE || estado == GANASTE) {
+                    if (evt.key.code == sf::Keyboard::R) {
+                        // Reiniciar el juego
+                        puntos = 0;
+                        vitalidad = 100;
+                        misil_1.cambiarPosicion(1300, -300);
+                        misil_2.cambiarPosicion(1300, -200);
+                        misil_3.cambiarPosicion(1400, -500);
+                        estado = JUGANDO;
+                    }
+                }
+                break;
             }
         }
 
-        if (evt.mouseButton.button == sf::Mouse::Left) {
-            // Verificar si se hizo clic izquierdo sobre misil_1
-            if (misil_1.sprite.getGlobalBounds().contains(sf::Vector2f(evt.mouseButton.x, evt.mouseButton.y))) {
-                puntos += 10;
-                // Generar coordenadas aleatorias fuera del rango de la ventana
-                // Obtener la nueva posición X
-                int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
-                // Obtener la nueva posición Y
-                int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
-                // Llamar al método cambiarPosicion() para actualizar la posición del misil
-                misil_1.cambiarPosicion(nuevaX, nuevaY);
+        if (estado == JUGANDO) {
+            // Actualizar la posición de los misiles enemigos
+            misil_1.movimiento();
+            misil_2.movimiento();
+            misil_3.movimiento();
+
+            // Restar una vida si un misil alcanza la posición 500
+            if (misil_1.y >= 500) {
+                vitalidad--;
+                explosionSprite.setPosition(misil_1.sprite.getPosition());
+                explosionVisible = true;
+                explosionClock.restart();
+                int salidamisil = rand() % 500 + 900;
+                misil_1.x = salidamisil;
+                misil_1.y = -300;
+                std::cout << "Misil 1 ha alcanzado el suelo. Vitalidad: " << vitalidad << std::endl;
             }
-            else if (misil_2.sprite.getGlobalBounds().contains(sf::Vector2f(evt.mouseButton.x, evt.mouseButton.y))) {
-                puntos += 10;
-                // Generar coordenadas aleatorias fuera del rango de la ventana
-                // Obtener la nueva posición X
-                int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
-                // Obtener la nueva posición Y
-                int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
-                // Llamar al método cambiarPosicion() para actualizar la posición del misil
-                misil_2.cambiarPosicion(nuevaX, nuevaY);
+            if (misil_2.y >= 500) {
+                vitalidad--;
+                explosionSprite.setPosition(misil_2.sprite.getPosition());
+                explosionVisible = true;
+                explosionClock.restart();
+                int salidamisil = rand() % 500 + 900;
+                misil_2.x = salidamisil;
+                misil_2.y = -300;
+                std::cout << "Misil 2 ha alcanzado el suelo. Vitalidad: " << vitalidad << std::endl;
             }
-            else if (misil_3.sprite.getGlobalBounds().contains(sf::Vector2f(evt.mouseButton.x, evt.mouseButton.y))) {
-                puntos += 10;
-                // Generar coordenadas aleatorias fuera del rango de la ventana
-                // Obtener la nueva posición X
-                int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
-                // Obtener la nueva posición Y
-                int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
-                // Llamar al método cambiarPosicion() para actualizar la posición del misil
-                misil_3.cambiarPosicion(nuevaX, nuevaY);
+            if (misil_3.y >= 500) {
+                vitalidad--;
+                explosionSprite.setPosition(misil_3.sprite.getPosition());
+                explosionVisible = true;
+                explosionClock.restart();
+                int salidamisil = rand() % 500 + 900;
+                misil_3.x = salidamisil;
+                misil_3.y = -300;
+                std::cout << "Misil 3 ha alcanzado el suelo. Vitalidad: " << vitalidad << std::endl;
+            }
+
+            // Actualizar el texto de los puntos
+            puntosText.setString("Puntos: " + std::to_string(puntos));
+
+            // Actualizar el texto de las vidas
+            vidasText.setString("Vitalidad: " + std::to_string(vitalidad) + "%");
+
+            if (vitalidad <= 0) {
+                estado = PERDISTE;
+            }
+            if (puntos >= 1000) {
+                estado = GANASTE;
             }
         }
 
@@ -140,59 +253,35 @@ void Juego::Go() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
             App.close();
 
-        // Actualizar la posición de los misiles enemigos
-        misil_1.movimiento();
-        misil_2.movimiento();
-        misil_3.movimiento();
-
-        // Verificar si un misil ha llegado a la posición 500
-        if (misil_1.y >= 500 || misil_2.y >= 500 || misil_3.y >= 500) {
-            // Restar una vida
-            vitalidad--;
-        }
-
-        // Si un misil sale de la pantalla, se genera una nueva posición aleatoria
-        if (misil_1.y > 500) {
-            int salidamisil = rand() % 500 + 900;
-            misil_1.x = salidamisil;
-            misil_1.y = -300;
-        }
-
-        if (misil_2.y > 500) {
-            int salidamisil = rand() % 500 + 900;
-            misil_2.x = salidamisil;
-            misil_2.y = -300;
-        }
-
-        if (misil_3.y > 500) {
-            int salidamisil = rand() % 500 + 900;
-            misil_3.x = salidamisil;
-            misil_3.y = -300;
-        }
-
-        // Actualizar el texto de los puntos
-        puntosText.setString("Puntos: " + std::to_string(puntos));
-
-        // Actualizar el texto de las vidas
-        vidasText.setString("Vitalidad: " + std::to_string(vitalidad) + "%");
-
-        if (vitalidad <= 0 || puntos >= 1000) {
-            // Cerrar la ventana
-            App.close();
-            // Salir del bucle
-            break;
-        }
         // Dibujar sprites en la ventana
-        App.draw(gameplaySprite);
-        App.draw(misil_1.sprite);
-        App.draw(misil_2.sprite);
-        App.draw(misil_3.sprite);
-        mira.draw(App);
-        App.draw(puntosText);
-        App.draw(vidasText);
+        App.clear();
+
+        if (estado == MENU) {
+            App.draw(menuSprite);
+        }
+        else if (estado == JUGANDO) {
+            App.draw(gameplaySprite);
+            App.draw(misil_1.sprite);
+            App.draw(misil_2.sprite);
+            App.draw(misil_3.sprite);
+            if (explosionVisible && explosionClock.getElapsedTime().asSeconds() < 0.5f) {
+                App.draw(explosionSprite);
+            }
+            else {
+                explosionVisible = false;
+            }
+            mira.draw(App);
+            App.draw(puntosText);
+            App.draw(vidasText);
+        }
+        else if (estado == PERDISTE) {
+            App.draw(perdisteSprite);
+        }
+        else if (estado == GANASTE) {
+            App.draw(ganasteSprite);
+        }
 
         // Mostrar la ventana
         App.display();
-
     }
 }
