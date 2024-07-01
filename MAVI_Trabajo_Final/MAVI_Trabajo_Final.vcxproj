@@ -143,7 +143,6 @@
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Inicio.h" />
     <ClInclude Include="Juego.h" />
-    <ClInclude Include="Main.h" />
     <ClInclude Include="Mira.h" />
     <ClInclude Include="MisilEnemigo.h" />
   </ItemGroup>

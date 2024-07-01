@@ -12,7 +12,7 @@ MisilEnemigo::MisilEnemigo(int _x, int _y) {
 }
 
 void MisilEnemigo::setearTextura() {
-    if (!textura.loadFromFile("misilenemigo.png")) {
+    if (!textura.loadFromFile("assets/misilenemigo.png")) {
         std::cerr << "Falta textura misil" << std::endl;
     }
     sprite.setTexture(textura);

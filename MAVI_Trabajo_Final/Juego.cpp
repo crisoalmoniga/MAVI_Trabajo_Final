@@ -34,7 +34,7 @@ void Juego::Go() {
 
     // Cargar la pantalla de juego (gameplay.png)
     sf::Texture gameplayTexture;
-    if (!gameplayTexture.loadFromFile("gameplay.png")) {  // Cargar la textura desde el archivo gameplay.png
+    if (!gameplayTexture.loadFromFile("assets/gameplay.png")) {  // Cargar la textura desde el archivo gameplay.png
         std::cerr << "Error al cargar la pantalla de juego (gameplay.png)" << std::endl;
         return;
     }
@@ -42,7 +42,7 @@ void Juego::Go() {
 
     // Cargar la pantalla de menú (menu.png)
     sf::Texture menuTexture;
-    if (!menuTexture.loadFromFile("menu.png")) {  // Cargar la textura desde el archivo menu.png
+    if (!menuTexture.loadFromFile("assets/menu.png")) {  // Cargar la textura desde el archivo menu.png
         std::cerr << "Error al cargar la pantalla de menú (menu.png)" << std::endl;
         return;
     }
@@ -50,7 +50,7 @@ void Juego::Go() {
 
     // Cargar la pantalla de "Perdiste" (perdiste.png)
     sf::Texture perdisteTexture;
-    if (!perdisteTexture.loadFromFile("perdiste.png")) {  // Cargar la textura desde el archivo perdiste.png
+    if (!perdisteTexture.loadFromFile("assets/perdiste.png")) {  // Cargar la textura desde el archivo perdiste.png
         std::cerr << "Error al cargar la pantalla de 'Perdiste' (perdiste.png)" << std::endl;
         return;
     }
@@ -58,7 +58,7 @@ void Juego::Go() {
 
     // Cargar la pantalla de "Ganaste" (ganaste.png)
     sf::Texture ganasteTexture;
-    if (!ganasteTexture.loadFromFile("ganaste.png")) {  // Cargar la textura desde el archivo ganaste.png
+    if (!ganasteTexture.loadFromFile("assets/ganaste.png")) {  // Cargar la textura desde el archivo ganaste.png
         std::cerr << "Error al cargar la pantalla de 'Ganaste' (ganaste.png)" << std::endl;
         return;
     }
@@ -77,7 +77,7 @@ void Juego::Go() {
 
     // Cargar la textura de la explosión
     sf::Texture explosionTexture;
-    if (!explosionTexture.loadFromFile("explosion.png")) {
+    if (!explosionTexture.loadFromFile("assets/explosion.png")) {
         std::cerr << "Error al cargar la textura de la explosión (explosion.png)" << std::endl;
         return;
     }
@@ -86,13 +86,13 @@ void Juego::Go() {
 
     // Crear fuentes de texto para mostrar los puntos y Vidas
     sf::Font font;
-    if (!font.loadFromFile("military_font_7.ttf")) {
+    if (!font.loadFromFile("assets/military_font_7.ttf")) {
         std::cerr << "Error al cargar la fuente de texto" << std::endl;
         return;
     }
 
     sf::Font fontVidas;
-    if (!fontVidas.loadFromFile("military_font_7.ttf")) {
+    if (!fontVidas.loadFromFile("assets/military_font_7.ttf")) {
         std::cerr << "Error al cargar la fuente de texto para las vidas" << std::endl;
         return;
     }
@@ -113,7 +113,7 @@ void Juego::Go() {
 
     // Crear objeto Mira y cargar su textura (mira.png)
     sf::Texture miraTexture;
-    if (!miraTexture.loadFromFile("mira.png")) {  // Cargar la textura de la mira desde el archivo mira.png
+    if (!miraTexture.loadFromFile("assets/mira.png")) {  // Cargar la textura de la mira desde el archivo mira.png
         std::cerr << "Error al cargar la textura de la mira (mira.png)" << std::endl;
         return;
     }
@@ -179,6 +179,15 @@ void Juego::Go() {
                         misil_3.cambiarPosicion(nuevaX, nuevaY);
                     }
                 }
+                else if (estado == PERDISTE || estado == GANASTE) {
+                    // Reiniciar el juego al hacer clic
+                    puntos = 0;
+                    vitalidad = 100;
+                    misil_1.cambiarPosicion(1300, -300);
+                    misil_2.cambiarPosicion(1300, -200);
+                    misil_3.cambiarPosicion(1400, -500);
+                    estado = JUGANDO;
+                }
                 break;
                 // Si se presiona una tecla
             case sf::Event::KeyPressed:
@@ -212,7 +221,7 @@ void Juego::Go() {
                 int salidamisil = rand() % 500 + 900;
                 misil_1.x = salidamisil;
                 misil_1.y = -300;
-                std::cout << "Misil 1 ha alcanzado el suelo. Vitalidad: " << vitalidad << std::endl;
+                std::cout << "Misil 1 ha explotado. Vitalidad: " << vitalidad << std::endl;
             }
             if (misil_2.y >= 500) {
                 vitalidad--;
@@ -222,7 +231,7 @@ void Juego::Go() {
                 int salidamisil = rand() % 500 + 900;
                 misil_2.x = salidamisil;
                 misil_2.y = -300;
-                std::cout << "Misil 2 ha alcanzado el suelo. Vitalidad: " << vitalidad << std::endl;
+                std::cout << "Misil 2 ha  explotado. Vitalidad: " << vitalidad << std::endl;
             }
             if (misil_3.y >= 500) {
                 vitalidad--;
@@ -232,7 +241,7 @@ void Juego::Go() {
                 int salidamisil = rand() % 500 + 900;
                 misil_3.x = salidamisil;
                 misil_3.y = -300;
-                std::cout << "Misil 3 ha alcanzado el suelo. Vitalidad: " << vitalidad << std::endl;
+                std::cout << "Misil 3 ha  explotado. Vitalidad: " << vitalidad << std::endl;
             }
 
             // Actualizar el texto de los puntos

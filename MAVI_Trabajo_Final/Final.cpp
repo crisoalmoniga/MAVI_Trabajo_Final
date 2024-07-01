@@ -4,9 +4,9 @@ Final::Final() {
 
     //Carga de las texturas y configuracion de los sprites para las pantallas
 
-    texturaPerdiste.loadFromFile("perdiste.png");
+    texturaPerdiste.loadFromFile("assets/perdiste.png");
     spritePerdiste.setTexture(texturaPerdiste);
 
-    texturaGanaste.loadFromFile("ganaste.png");
+    texturaGanaste.loadFromFile("assets/ganaste.png");
     spriteGanaste.setTexture(texturaGanaste);
 }
