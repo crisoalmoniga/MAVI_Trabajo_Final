@@ -248,7 +248,7 @@ void Juego::Go() {
             misil_2.movimiento();
             misil_3.movimiento();
 
-            if (misil_1.sprite.getPosition().y >= 500) {
+            if (misil_1.sprite.getPosition().y >= 510) {
                 vitalidad -= 2;
                 explosionSprite.setPosition(misil_1.sprite.getPosition());
                 explosionVisible = true;
@@ -257,7 +257,7 @@ void Juego::Go() {
                 int salidamisil = rand() % 500 + 900;
                 misil_1.cambiarPosicion(salidamisil, -300);
             }
-            if (misil_2.sprite.getPosition().y >= 500) {
+            if (misil_2.sprite.getPosition().y >= 510) {
                 vitalidad -= 2;
                 explosionSprite.setPosition(misil_2.sprite.getPosition());
                 explosionVisible = true;
@@ -266,7 +266,7 @@ void Juego::Go() {
                 int salidamisil = rand() % 500 + 900;
                 misil_2.cambiarPosicion(salidamisil, -300);
             }
-            if (misil_3.sprite.getPosition().y >= 500) {
+            if (misil_3.sprite.getPosition().y >= 510) {
                 vitalidad -= 2;
                 explosionSprite.setPosition(misil_3.sprite.getPosition());
                 explosionVisible = true;
