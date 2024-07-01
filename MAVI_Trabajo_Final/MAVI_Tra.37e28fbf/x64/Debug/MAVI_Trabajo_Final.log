@@ -1,14 +1,14 @@
 ﻿  Juego.cpp
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(144,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(144,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,77): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,77): warning C4244:         with
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,77): warning C4244:         [
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,77): warning C4244:             T=float
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,77): warning C4244:         ]
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,58): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,58): warning C4244:         with
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,58): warning C4244:         [
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,58): warning C4244:             T=float
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(153,58): warning C4244:         ]
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(176,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(176,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,77): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,77): warning C4244:         with
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,77): warning C4244:         [
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,77): warning C4244:             T=float
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,77): warning C4244:         ]
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,58): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,58): warning C4244:         with
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,58): warning C4244:         [
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,58): warning C4244:             T=float
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(186,58): warning C4244:         ]
   MAVI_Trabajo_Final.vcxproj -> D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\x64\Debug\MAVI_Trabajo_Final.exe
