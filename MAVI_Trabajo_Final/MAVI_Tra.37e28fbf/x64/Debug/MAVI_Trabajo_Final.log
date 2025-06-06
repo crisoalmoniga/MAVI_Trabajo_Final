@@ -12,7 +12,7 @@ D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Fina
               T=float
           ]
 D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(233,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(314,39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\Juego.cpp(311,39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   MAVI_Trabajo_Final.vcxproj -> D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabajo_Final\MAVI_Trabajo_Final\MAVI_Trabajo_Final\x64\Debug\MAVI_Trabajo_Final.exe
   "pwsh.exe" no se reconoce como un comando interno o externo,
   programa o archivo por lotes ejecutable.

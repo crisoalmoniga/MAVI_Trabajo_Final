@@ -37,7 +37,7 @@ void Juego::Go() {
     // Limitar la tasa de fotogramas a 60 FPS
     App.setFramerateLimit(60);
 
-    // Cargar la pantalla de juego (gameplay.png)
+    // Cargar la pantalla de juego
     sf::Texture gameplayTexture;
     if (!gameplayTexture.loadFromFile("assets/gameplay.png")) {
         std::cerr << "Error al cargar la pantalla de juego (gameplay.png)" << std::endl;
@@ -45,7 +45,7 @@ void Juego::Go() {
     }
     sf::Sprite gameplaySprite(gameplayTexture);
 
-    // Cargar la pantalla de menú (menu.png)
+    // Cargar la pantalla de menú
     sf::Texture menuTexture;
     if (!menuTexture.loadFromFile("assets/menu.png")) {
         std::cerr << "Error al cargar la pantalla de menú (menu.png)" << std::endl;
@@ -53,7 +53,7 @@ void Juego::Go() {
     }
     sf::Sprite menuSprite(menuTexture);
 
-    // Cargar la pantalla de "Perdiste" (perdiste.png)
+    // Cargar la pantalla de "Perdiste"
     sf::Texture perdisteTexture;
     if (!perdisteTexture.loadFromFile("assets/perdiste.png")) {
         std::cerr << "Error al cargar la pantalla de 'Perdiste' (perdiste.png)" << std::endl;
@@ -61,7 +61,7 @@ void Juego::Go() {
     }
     sf::Sprite perdisteSprite(perdisteTexture);
 
-    // Cargar la pantalla de "Ganaste" (ganaste.png)
+    // Cargar la pantalla de "Ganaste"
     sf::Texture ganasteTexture;
     if (!ganasteTexture.loadFromFile("assets/ganaste.png")) {
         std::cerr << "Error al cargar la pantalla de 'Ganaste' (ganaste.png)" << std::endl;
@@ -125,7 +125,7 @@ void Juego::Go() {
     vidasText.setFillColor(sf::Color::Red);
     vidasText.setPosition(10, 50);
 
-    // Crear objeto Mira y cargar su textura (mira.png)
+    // Crear objeto Mira y cargar su textura
     sf::Texture miraTexture;
     if (!miraTexture.loadFromFile("assets/mira.png")) {
         std::cerr << "Error al cargar la textura de la mira (mira.png)" << std::endl;
@@ -230,10 +230,8 @@ void Juego::Go() {
                         explosionSound.play();
 
                         int nuevaX = rand() % 100 + 200;
-                        bomba.cambiarPosicion(nuevaX, -300);
+                        bomba.cambiarPosicion(nuevaX, -200);
                     }
-
-
                 }
                 else if (estado == PERDISTE || estado == GANASTE) {
                     puntos = 0;
@@ -270,7 +268,6 @@ void Juego::Go() {
             misil_2.movimiento();
             misil_3.movimiento();
             bomba.movimiento();
-
 
             if (misil_1.sprite.getPosition().y >= 510) {
                 vitalidad -= 2;
@@ -311,10 +308,8 @@ void Juego::Go() {
                 explosionSound.play();
 
                 int nuevaX = rand() % 100 + 200;
-                bomba.cambiarPosicion(nuevaX, -300);
+                bomba.cambiarPosicion(nuevaX, -200);
             }
-
-
 
             puntosText.setString("Puntos: " + std::to_string(puntos));
             vidasText.setString("Energía disponible: " + std::to_string(vitalidad) + "%");

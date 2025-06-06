@@ -42,7 +42,7 @@ sf::Vector2f Bomba::getPosicion() const {
 void Bomba::cambiarPosicion(float newX, float newY) {
     x = newX;
     y = newY;
-    velocidadX = 4.0f;     // Reinicia el movimiento oblicuo
+    velocidadX = 4.0f;
     velocidadY = -6.0f;
     modoMRUA = false;
     sprite.setPosition(x, y);
