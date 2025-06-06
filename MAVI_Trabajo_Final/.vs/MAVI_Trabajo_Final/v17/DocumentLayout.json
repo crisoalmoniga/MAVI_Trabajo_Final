@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{37E28FBF-328C-4914-A3CD-900A9143E459}|MAVI_Trabajo_Final.vcxproj|D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Bomba.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{37E28FBF-328C-4914-A3CD-900A9143E459}|MAVI_Trabajo_Final.vcxproj|solutionrelative:Bomba.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{37E28FBF-328C-4914-A3CD-900A9143E459}|MAVI_Trabajo_Final.vcxproj|D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{37E28FBF-328C-4914-A3CD-900A9143E459}|MAVI_Trabajo_Final.vcxproj|solutionrelative:Juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37E28FBF-328C-4914-A3CD-900A9143E459}|MAVI_Trabajo_Final.vcxproj|D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Bomba.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{37E28FBF-328C-4914-A3CD-900A9143E459}|MAVI_Trabajo_Final.vcxproj|solutionrelative:Bomba.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,13 +30,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Bomba.cpp",
+              "DocumentMoniker": "D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Bomba.cpp",
+              "RelativeDocumentMoniker": "Bomba.cpp",
+              "ToolTip": "D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Bomba.cpp",
+              "RelativeToolTip": "Bomba.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-05T23:04:03.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Bomba.h",
+              "DocumentMoniker": "D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Bomba.h",
+              "RelativeDocumentMoniker": "Bomba.h",
+              "ToolTip": "D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Bomba.h",
+              "RelativeToolTip": "Bomba.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-05T22:19:04.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Juego.cpp",
               "DocumentMoniker": "D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Juego.cpp",
               "RelativeDocumentMoniker": "Juego.cpp",
               "ToolTip": "D:\\Universidad - Cris\\Videojuegos\\Universidad del Litoral\\MAVI\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\MAVI_Trabajo_Final\\Juego.cpp",
               "RelativeToolTip": "Juego.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAPoAAAAAAAAAAAAAAEYBAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-01T19:37:34.473Z",
               "EditorCaption": ""

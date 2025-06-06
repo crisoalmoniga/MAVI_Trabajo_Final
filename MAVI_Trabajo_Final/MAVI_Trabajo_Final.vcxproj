@@ -144,6 +144,7 @@ copy "D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabaj
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bomba.cpp" />
     <ClCompile Include="Final.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Inicio.cpp" />
@@ -153,6 +154,7 @@ copy "D:\Universidad - Cris\Videojuegos\Universidad del Litoral\MAVI\MAVI_Trabaj
     <ClCompile Include="MisilEnemigo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bomba.h" />
     <ClInclude Include="Final.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Inicio.h" />

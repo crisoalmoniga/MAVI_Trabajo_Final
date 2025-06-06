@@ -9,6 +9,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <random>
+#include "Bomba.h"
+
 
 Juego::Juego() {
 }
@@ -25,10 +27,12 @@ void Juego::Go() {
     int puntos = 0;
     int vitalidad = 100;
 
-    // Crear tres objetos MisilEnemigo en posiciones específicas
+    // Todos los proyectiles
     MisilEnemigo misil_1(1300, -300);
     MisilEnemigo misil_2(1300, -200);
     MisilEnemigo misil_3(1400, -500);
+    Bomba bomba(100, 0, 4.0f, -6.0f);
+
 
     // Limitar la tasa de fotogramas a 60 FPS
     App.setFramerateLimit(60);
@@ -213,7 +217,23 @@ void Juego::Go() {
                         int nuevaX = rand() % (App.getSize().x + 200) + App.getSize().x;
                         int nuevaY = rand() % (App.getSize().y + 200) + App.getSize().y;
                         misil_3.cambiarPosicion(nuevaX, nuevaY);
+
                     }
+                    else if (bomba.sprite.getGlobalBounds().contains(mousePos)) {
+                        puntos += 15;
+                        clickExplosionSprite.setPosition(bomba.sprite.getPosition());
+                        clickExplosionVisible = true;
+                        clickExplosionClock.restart();
+
+                        if (explosionSound.getStatus() == sf::Sound::Playing)
+                            explosionSound.stop();
+                        explosionSound.play();
+
+                        int nuevaX = rand() % 100 + 200;
+                        bomba.cambiarPosicion(nuevaX, -300);
+                    }
+
+
                 }
                 else if (estado == PERDISTE || estado == GANASTE) {
                     puntos = 0;
@@ -221,6 +241,7 @@ void Juego::Go() {
                     misil_1.cambiarPosicion(1300, -300);
                     misil_2.cambiarPosicion(1300, -200);
                     misil_3.cambiarPosicion(1400, -500);
+                    bomba.cambiarPosicion(1400, -500);
                     estado = JUGANDO;
                     musicMenu.stop();
                     musicGameplay.play();
@@ -234,6 +255,7 @@ void Juego::Go() {
                         misil_1.cambiarPosicion(1300, -300);
                         misil_2.cambiarPosicion(1300, -200);
                         misil_3.cambiarPosicion(1400, -500);
+                        bomba.cambiarPosicion(1400, -500);
                         estado = JUGANDO;
                         musicMenu.stop();
                         musicGameplay.play();
@@ -247,6 +269,8 @@ void Juego::Go() {
             misil_1.movimiento();
             misil_2.movimiento();
             misil_3.movimiento();
+            bomba.movimiento();
+
 
             if (misil_1.sprite.getPosition().y >= 510) {
                 vitalidad -= 2;
@@ -276,6 +300,22 @@ void Juego::Go() {
                 misil_3.cambiarPosicion(salidamisil, -300);
             }
 
+            if (bomba.sprite.getPosition().y >= 510) {
+                vitalidad -= 2;
+                explosionSprite.setPosition(bomba.sprite.getPosition());
+                explosionVisible = true;
+                explosionClock.restart();
+
+                if (explosionSound.getStatus() == sf::Sound::Playing)
+                    explosionSound.stop();
+                explosionSound.play();
+
+                int nuevaX = rand() % 100 + 200;
+                bomba.cambiarPosicion(nuevaX, -300);
+            }
+
+
+
             puntosText.setString("Puntos: " + std::to_string(puntos));
             vidasText.setString("Energía disponible: " + std::to_string(vitalidad) + "%");
 
@@ -284,7 +324,7 @@ void Juego::Go() {
                 musicGameplay.stop();
                 musicMenu.play();
             }
-            if (puntos >= 500) {  // Condición de victoria a 700 puntos
+            if (puntos >= 500) {
                 estado = GANASTE;
                 musicGameplay.stop();
                 musicMenu.play();
@@ -304,6 +344,7 @@ void Juego::Go() {
             App.draw(misil_1.sprite);
             App.draw(misil_2.sprite);
             App.draw(misil_3.sprite);
+            bomba.draw(App);
             if (explosionVisible && explosionClock.getElapsedTime().asSeconds() < 0.5f) {
                 App.draw(explosionSprite);
             }
